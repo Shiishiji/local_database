@@ -2,7 +2,7 @@
 
 ## Currently supports
 * (pg) postgres + adminer
-
+* (rabbit) rabbitMQ
 
 
 ## How to use
@@ -12,12 +12,46 @@
 make init
 ```
 
-#### 2. Run local instance of postgres
+#### 2. Get your swarm ip address
+```shell
+make ip
+```
+
+#### 3. Run local instance of postgres
 ```shell
 make pg
 ```
 
-#### 3. Get your swarm ip address
+#### 3a. Inspect postgres service
 ```shell
-make ip
+make pg-inspect
+```
+
+#### 4. Run local instance of rabbitMQ
+```shell
+make rabbit
+```
+
+#### 4a. Inspect rabbitMQ service
+```shell
+make rabbit-inspect
+```
+
+## Services management 
+
+#### 1. To list swarm services use
+```shell
+make services
+```
+
+#### 2. To leave swarm use
+```shell
+make leave
+```
+
+## Troubleshooting
+
+#### If there are problems creating network for any of services use
+```shell
+make restart-docker
 ```
