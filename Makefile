@@ -24,8 +24,15 @@ restart-docker: ## Restarts docker
 	sudo systemctl stop docker
 	sudo systemctl start docker
 
+## —— DBeavere boot-up ——————————————————————————————————
+dbeaver: ## Boots up dbeaver
+	docker stack deploy -c dbeaver/stack.yml dbeaver
+
+dbeaver-inspect:
+	docker service inspect dbeaver_dbeaver
+
 ## —— Postgresql boot-up ——————————————————————————————————
-pg: ## Boots up pg database with adminer
+pg: ## Boots up postgres database
 	docker stack deploy -c postgresql/stack.yml postgres
 
 pg-inspect:

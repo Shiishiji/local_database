@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  dbeaver:
+    image: dbeaver/cloudbeaver:latest
+    build:
+      context: beaver
+      dockerfile: beaver/Dockerfile
+    ports:
+      - "8090:8978"
+    volumes:
+      - ./workspace:/opt/cloudbeaver/workspace
