@@ -7,10 +7,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: database
+    volumes:
+      - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
-  adminer:
-    image: adminer
-    ports:
-      - "8090:8080"
