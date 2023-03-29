@@ -33,6 +33,7 @@ dbeaver-inspect:
 
 ## —— Postgresql boot-up ——————————————————————————————————
 pg: ## Boots up postgres database
+	touch postgresql/.env.local
 	docker stack deploy -c postgresql/stack.yml postgres
 
 pg-inspect:
@@ -40,6 +41,7 @@ pg-inspect:
 
 ## —— RabbitMQ boot-up ——————————————————————————————————
 rabbit: ## Boots up rabbit
+	touch rabbitmq/.env.local
 	docker stack deploy -c rabbitmq/stack.yml rabbitmq
 
 rabbit-inspect:
